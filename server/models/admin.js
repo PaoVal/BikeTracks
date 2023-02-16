@@ -1,7 +1,7 @@
 import DataTypes from "sequelize"
 import { connection } from "./../config/index.js"
 
-const adminData = {
+const admin_data = {
 	id: {
 		type: DataTypes.UUID,
 		defaultValue: DataTypes.UUIDV4,
@@ -25,4 +25,4 @@ const adminData = {
 	}
 }
 
-export const admin = connection.define("Admin", adminData.schema)
+export const admin = connection.define("Admin", admin_data)
