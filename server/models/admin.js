@@ -2,14 +2,22 @@ import DataTypes from "sequelize"
 import { connection } from "./../config/index.js"
 
 const adminData = {
-	name: {
-		type: DataTypes.STRING,
-		allowNull: false
-	},
 	id: {
 		type: DataTypes.UUID,
 		defaultValue: DataTypes.UUIDV4,
 		primaryKey: true
+	},
+	firstName: {
+		type: DataTypes.STRING,
+		allowNull: false
+	},
+	lastName: {
+		type: DataTypes.STRING,
+		allowNull: false
+	},
+	username: {
+		type: DataTypes.STRING,
+		allowNull: false
 	},
 	password: {
 		type: DataTypes.STRING,
