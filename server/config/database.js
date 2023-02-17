@@ -15,7 +15,7 @@ new Sequelize(
 	}
 )
 
-export function initdb() {
+export function connectdb() {
 	connection.authenticate()
 	.then(() => console.log('Database connection established'))
 	.catch((error) => console.error('Unable to connect to database: ', error))

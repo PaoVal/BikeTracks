@@ -1,15 +1,22 @@
 import express from "express"
+import bodyParser from "body-parser"
 
-import { initdb, cors_config } from "./config/index.js"
-import { landing } from "./routes/index.js";
+import { connectdb, cors_config } from "./config/index.js"
+import { landing, login, register } from "./routes/index.js"
+import { admin } from "./models/index.js"
 
 const PORT = process.env.PORT || 3001
 const app = express()
 
-initdb()
-app.use(cors_config)
+connectdb()
+admin.sync() // TODO: abstract this away
 
-app.use("/", landing);
+app.use(cors_config)
+app.use(bodyParser.json())
+
+app.use("/", landing)
+app.use("/login", login)
+app.use("/register", register)
 
 app.listen(PORT, () => {
 	console.log(`Server listening on ${PORT}`)
