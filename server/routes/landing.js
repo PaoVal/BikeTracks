@@ -1,9 +1,9 @@
-import express from "express";
-import { landing } from "../controllers/index.js";
+import express from "express"
+import { landing } from "../controllers/index.js"
 
-const { Router } = express;
-const route = Router();
+const { Router } = express
+const route = Router()
 
-route.get("/", landing);
+route.get("/", landing)
 
-export default route;
+export default route

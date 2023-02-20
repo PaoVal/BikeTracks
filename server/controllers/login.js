@@ -11,6 +11,6 @@ export default function (req, res) {
 			if (!await user.isPasswordValid(password))
 				return res.status(401).json({message: "invalid password"})
 
-			res.status(200).json({message: "successful login"} )
+			res.status(200).json({message: "successful login"})
 		})
 }
