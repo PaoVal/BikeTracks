@@ -1,6 +1,5 @@
 import DataTypes from "sequelize"
 import { connection } from "./../config/index.js"
-import { transaction } from "./index.js"
 
 const product_data = {
 	id: {
@@ -21,7 +20,7 @@ const product_data = {
 		allowNull: false
 	},
 	description: {
-		type: DataTypes.STRING,
+		type: DataTypes.TEXT('tiny'),
 		allowNull: true
 	},
 	count: { // TODO: note to self, could separate onto separate "stock"
