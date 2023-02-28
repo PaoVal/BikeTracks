@@ -2,7 +2,17 @@
 A web app to track YOUR bike sales and inventory.
 
 
-# How to run
+# Install necessary dependencies
+```
+npm i
+```
+
+# How to run client
+```
+npm start
+```
+
+# How to run server
 ```
 npm run dev
 ```
