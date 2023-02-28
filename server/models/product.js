@@ -15,7 +15,7 @@ const product_data = {
 		type: DataTypes.STRING,
 		allowNull: false
 	},
-	price: { // TODO: might want to split up onto another object with amount+currency
+	price: {
 		type: DataTypes.DECIMAL,
 		allowNull: false
 	},
@@ -23,12 +23,10 @@ const product_data = {
 		type: DataTypes.TEXT('tiny'),
 		allowNull: true
 	},
-	count: { // TODO: note to self, could separate onto separate "stock"
+	count: {
 		type: DataTypes.INTEGER,
 		defaultValue: 0,
 	}
-	// TODO: additional image field?
-	// TODO: tags for filtering stats?
 }
 
 export const product = connection.define("Product", product_data)
