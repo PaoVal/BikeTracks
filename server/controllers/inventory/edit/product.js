@@ -1,9 +1,9 @@
-import { product } from "../../models/index.js"
+import { product } from "../../../models/index.js"
 
 export default function (req, res) {
-	const { name, brand, price, description, id } = req.body
+	const { name, brand, price, description, count, id } = req.body
 	product.update(
-		{ name, brand, price, description },
+		{ name, brand, price, description, count },
 		{ where: { id } }
 	).then(
 		(modified_product) => {

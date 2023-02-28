@@ -2,6 +2,7 @@ import { product } from "../../models/index.js"
 
 export default function (req, res) {
 	const { id } = req.body
+	console.log(req.body)
 
 	product.destroy({ where: { id } })
 	.then(

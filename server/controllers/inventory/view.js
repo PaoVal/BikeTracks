@@ -1,7 +1,7 @@
 import { product } from "../../models/index.js"
 
 export default function (req, res) {
-	const { id } = req.body
+	const { id } = req.query
 
 	product.findOne({ where: { id } })
 	.then(
@@ -9,7 +9,7 @@ export default function (req, res) {
 			if (item == null) return res.status(404).json({message: "product not found"})
 
 			const { name, brand, price, description, count } = item
-			const item_details = {name, brand, price, description, count}
+			const item_details = {id, name, brand, price, description, count}
 
 			res.status(200).json(item_details)
 		}
