@@ -1,27 +1,25 @@
-import React from "react";
-import axios from "axios";
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import './App.css'
+
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes
+} from "react-router-dom"
+
+import { Landing, Product, Statistics } from "./Pages/index.js"
 
 function App() {
-	const [data, setData] = React.useState(null);
-
-	React.useEffect(() => {
-		axios.get("http://localhost:3001/")
-			.then((res) => setData(res.data.message))
-	}, []);
-
-	// TODO: clean up
 	return (
-	<div className="App">
-		<header className="App-header">
-			<img src={logo} className="App-logo" alt="logo" />
-			<p>
-			{!data ? "Loading..." : data}
-			</p>
-		</header>
-	</div>
-	);
+		<Router>
+			<Routes>
+				<Route path="/inventory/:productID" element={<Product />}/>
+				<Route path="/inventory" element={<Landing />}/>
+				<Route path="/statistics" element={<Statistics />}/>
+				<Route path="/" element={<Landing />}/>
+			</Routes>
+		</Router>
+	)
 }
 
 export default App;
