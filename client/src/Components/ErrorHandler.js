@@ -13,7 +13,7 @@ export const allError = {
 
 }
 
-export const findValidationErrors = (product) => {
+export const validateProduct = (product) => {
 
 	const isNameValid = product.name === "" || product.name.length > 65
 	const isBrandValid = product.brand === "" || product.name.length > 50

@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 
-import { defaultError, allError, findValidationErrors, isError } from "./errorHandler"
+import { defaultError, allError, validateProduct, isError } from "../ErrorHandler"
 
 import { Grid } from "@mui/material"
 import Button from '@mui/material/Button'
@@ -45,7 +45,7 @@ export default function AddProductDialog(props) {
 	}
 
 	const addItem = () => {
-		const errors = findValidationErrors(product)
+		const errors = validateProduct(product)
 		setError(errors)
 		if (isError(errors)) return // if there's been an error, do NOT make a request
 		requestAddItem()

@@ -84,7 +84,6 @@ export default function LineGraph() {
 			}
 			axios.get("http://localhost:3001/sale/month", req_params)
 			.then((response) => {
-				console.log(response.data.saleCount)
 				setSales(response.data.saleCount)
 			})
 			.catch((err) => {
